@@ -1,9 +1,11 @@
+
+require('dotenv').config();
 'use strict';
 class ChatAI {
 
     constructor(options) {
         let defaults = {
-            api_key: '',
+            api_key: process.env.OPENAI_API_KEY,
             source: 'openai',
             model: 'gpt-3.5-turbo',
             conversations: [],
@@ -343,7 +345,7 @@ class ChatAI {
         return `
             <div class="welcome">
                 <h1>ChatAI<span class="ver">${this.options.version}</span></h1>                    
-                <p>Made with love by <a href="https://codeshack.io" target="_blank">CodeShack</a> &lt;3</p>
+                <p>Made with love <a href="https://joyful-pa-euml.onrender.com/index.html" target="_blank">Joyful PA</a> &lt;3</p>
                 <a href="#" class="open-database"><i class="fa-regular fa-folder-open"></i>Open Database...</a>
             </div>
         `;
