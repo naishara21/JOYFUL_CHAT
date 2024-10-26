@@ -5,17 +5,17 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js" // Optional: for development
+    "dev": "nodemon server.js"
   },
   "dependencies": {
-    "axios": "^1.0.0",  // for making HTTP requests
-    "dotenv": "^16.0.0", // for loading environment variables
-    "express": "^4.18.2"  // for creating the server
+    "axios": "^1.0.0",
+    "dotenv": "^16.0.0", 
+    "express": "^4.18.2" 
   },
   "devDependencies": {
-    "nodemon": "^2.0.20" // Optional: for automatic server restarts during development
+    "nodemon": "^2.0.20"
   },
   "keywords": ["OpenAI", "chatbot", "assistant"],
-  "author": "Your Name",
+  "author": "Naisha Rastogi",
   "license": "MIT"
 }
