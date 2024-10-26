@@ -21,6 +21,7 @@ app.post('/chat', async (req, res) => {
     }
 
     try {
+        // Make the request to the OpenAI API
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
             model: 'gpt-3.5-turbo',
             messages: [{ role: 'user', content: userMessage }],
@@ -31,9 +32,21 @@ app.post('/chat', async (req, res) => {
             }
         });
 
-        res.json({ reply: response.data.choices[0].message.content });
+        // Log the full response from OpenAI
+        console.log('OpenAI Response:', response.data);
+
+        // Check if the response structure is as expected
+        const aiReply = response.data.choices[0]?.message?.content;
+
+        // If the AI reply is undefined or null, send an error response
+        if (!aiReply) {
+            return res.status(500).json({ error: 'No reply from AI.' });
+        }
+
+        // Send the AI response back to the client
+        res.json({ reply: aiReply });
     } catch (error) {
-        console.error(error);
+        console.error('Error:', error);  // Log the error for debugging
         const errorMessage = error.response?.data?.error?.message || 'Error processing your request.';
         res.status(500).json({ error: errorMessage });
     }
