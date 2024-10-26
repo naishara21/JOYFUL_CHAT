@@ -4,8 +4,8 @@
   "description": "A personal assistant chat application using OpenAI API.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node ChatAI.js",
+    "dev": "nodemon ChatAI.js"
   },
   "dependencies": {
     "axios": "^1.0.0",
